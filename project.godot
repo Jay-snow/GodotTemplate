@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="GameTemplate"
+run/main_scene="res://game_manager.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 AudioStreamManager="*res://audio_stream_manager.gd"
+Globals="*res://globals.gd"

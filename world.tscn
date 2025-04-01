@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bcgnscqnfn061"]
 
-[ext_resource type="Script" path="res://item.gd" id="1_f7wvo"]
-[ext_resource type="Shader" path="res://shaders/hover_outline.gdshader" id="2_eftjq"]
+[ext_resource type="Script" uid="uid://dubni3fr8a1vl" path="res://item.gd" id="1_f7wvo"]
+[ext_resource type="Shader" uid="uid://dmhnekhnod3my" path="res://shaders/hover_outline.gdshader" id="2_eftjq"]
 [ext_resource type="Texture2D" uid="uid://dfo6av2bsnha8" path="res://gravestone.png" id="2_k3vx0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cb11l"]

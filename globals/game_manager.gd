@@ -1,7 +1,7 @@
 extends Node2D
 @onready var introduction: Control = $CanvasLayer/Introduction
 
-const WORLD = preload("res://world.tscn")
+const WORLD = preload("res://levels/demo_world/world.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	introduction.get_node('Start').start_game.connect(_begin_game)

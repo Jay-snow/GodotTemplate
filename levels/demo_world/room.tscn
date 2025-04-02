@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5xlbsgnrinwp"]
 
-[ext_resource type="Script" uid="uid://dbl2wnqp07cy1" path="res://room.gd" id="1_f0ost"]
+[ext_resource type="Script" uid="uid://dbl2wnqp07cy1" path="res://levels/demo_world/room.gd" id="1_f0ost"]
 [ext_resource type="Texture2D" uid="uid://0i6hj7ynbwah" path="res://icon.svg" id="1_s72rm"]
 
 [node name="Room" type="Node2D"]

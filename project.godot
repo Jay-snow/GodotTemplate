@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="2D Godot Template"
-run/main_scene="res://game_manager.tscn"
+run/main_scene="res://globals/game_manager.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-AudioStreamManager="*res://audio_stream_manager.gd"
-Globals="*res://globals.gd"
+AudioStreamManager="*res://globals/audio_stream_manager.gd"
+Globals="*res://globals/globals.gd"
 
 [display]
 

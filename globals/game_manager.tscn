@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://vbmu2iqvcyt0"]
+[gd_scene load_steps=4 format=3 uid="uid://vbmu2iqvcyt0"]
 
 [ext_resource type="Script" uid="uid://l107vpa8rxu1" path="res://globals/game_manager.gd" id="1_77tft"]
 [ext_resource type="Script" uid="uid://ccxedc8hswpys" path="res://start.gd" id="2_75cf7"]
+[ext_resource type="Script" uid="uid://yu1jwwq6a4c7" path="res://globals/startBtn_platformer.gd" id="3_75cf7"]
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_77tft")
@@ -31,3 +32,19 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Start Game"
 script = ExtResource("2_75cf7")
+
+[node name="Platformer" type="Button" parent="CanvasLayer/Introduction"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 27.5
+offset_right = 46.0
+offset_bottom = 58.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Platformer"
+script = ExtResource("3_75cf7")

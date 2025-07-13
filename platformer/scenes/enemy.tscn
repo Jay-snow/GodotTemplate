@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://d1yn8yo4aill4"]
+
+[ext_resource type="Script" uid="uid://djrfw6qhc5e23" path="res://scripts/enemy.gd" id="1_ou8t8"]
+[ext_resource type="Texture2D" uid="uid://tp8q4jyhscrv" path="res://assets/Fierce Tooth/02-Run/Run 01.png" id="2_uusbr"]
+[ext_resource type="Texture2D" uid="uid://bj1xw5uqaruwh" path="res://assets/Fierce Tooth/02-Run/Run 02.png" id="3_bkcnj"]
+[ext_resource type="Texture2D" uid="uid://dbjfqk1mwck2f" path="res://assets/Fierce Tooth/02-Run/Run 03.png" id="4_rkml8"]
+[ext_resource type="Texture2D" uid="uid://tcedyjk713po" path="res://assets/Fierce Tooth/02-Run/Run 04.png" id="5_x00s4"]
+[ext_resource type="Texture2D" uid="uid://cigl25ykajt7n" path="res://assets/Fierce Tooth/02-Run/Run 05.png" id="6_v63i5"]
+[ext_resource type="Texture2D" uid="uid://c3urh8fwm4q25" path="res://assets/Fierce Tooth/02-Run/Run 06.png" id="7_p0sfy"]
+[ext_resource type="PackedScene" uid="uid://8gn51rm325ex" path="res://scenes/kill_zone.tscn" id="8_cc7vi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_esgxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uusbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bkcnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rkml8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x00s4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v63i5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p0sfy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tcca8"]
+radius = 9.05539
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otf6f"]
+size = Vector2(21, 22)
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_ou8t8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_esgxb")
+autoplay = "default"
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(14, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-13, 0)
+
+[node name="KillZone" parent="." instance=ExtResource("8_cc7vi")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+shape = SubResource("CircleShape2D_tcca8")
+
+[node name="RayCastUp" type="RayCast2D" parent="."]
+target_position = Vector2(0, -16)
+collision_mask = 2
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_otf6f")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

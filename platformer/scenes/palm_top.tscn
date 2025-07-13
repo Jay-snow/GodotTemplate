@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1wj3mfkxs738"]
+
+[ext_resource type="Texture2D" uid="uid://v730mon8hk1w" path="res://assets/Background/Front Palm Trees/Front Palm Tree Top 01.png" id="1_ljtxl"]
+[ext_resource type="Texture2D" uid="uid://b60w0tjvto8if" path="res://assets/Background/Front Palm Trees/Front Palm Tree Top 02.png" id="2_f1yow"]
+[ext_resource type="Texture2D" uid="uid://cha0ubhish75q" path="res://assets/Background/Front Palm Trees/Front Palm Tree Top 03.png" id="3_p5rgv"]
+[ext_resource type="Texture2D" uid="uid://78ab5bci6218" path="res://assets/Background/Front Palm Trees/Front Palm Tree Top 04.png" id="4_ncuv8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rskb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ljtxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f1yow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p5rgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ncuv8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x60it"]
+size = Vector2(35, 10)
+
+[node name="PalmTop" type="AnimatableBody2D"]
+
+[node name="PalmTop" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8rskb")
+autoplay = "default"
+frame_progress = 0.734194
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -11)
+shape = SubResource("RectangleShape2D_x60it")
+one_way_collision = true

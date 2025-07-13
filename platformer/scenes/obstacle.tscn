@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dln1jcpe3bel8"]
+
+[ext_resource type="Script" uid="uid://bo14w2qhhim1g" path="res://Obstacle.gd" id="1_4kpow"]
+[ext_resource type="Texture2D" uid="uid://xj8d1udi3tgw" path="res://icon.svg" id="2_krxgm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpu7j"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfjy2"]
+size = Vector2(135, 135)
+
+[node name="Obstacle" type="StaticBody2D"]
+collision_layer = 5
+collision_mask = 2
+script = ExtResource("1_4kpow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(1, 1.00417)
+texture = ExtResource("2_krxgm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_rpu7j")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_rfjy2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
